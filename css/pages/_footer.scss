@@ -1,0 +1,64 @@
+#contato {
+  background-color: $black;
+  padding: 60px 0;
+  h2 {
+    color: $gray--light;
+    margin-bottom: 30px;
+    @include type-2(36);
+    @include bp(small) {
+      @include type-2(24)
+    }
+  }
+  img {
+    max-width: 300px;
+  }
+}
+.wpcf7-form {
+  display: flex;
+  flex-direction: column;
+  label {
+    margin-left: 15px;
+    color: $gray--light;
+    @include type-1(14)
+  }
+  input {
+    padding: 10px;
+    margin-bottom: 30px;
+    background: #242643;
+    border: none;
+    border-radius: 5em;
+    color: $gray--light;
+    width: 100%;
+  }
+  button {
+    border: none;
+  }
+}
+.wpcf7-validation-errors, .wpcf7-mail-sent-ok {
+  color: $white;
+}
+
+.super-footer {
+  padding: 15px 0;
+  justify-content: space-around;
+  align-items: center;
+  @include bp(small) {
+    flex-direction: column;
+  }
+  p {
+    text-align: center;
+    @include type-1(14);
+  }
+  img {
+    width: 100px;
+  }
+  .social {
+    display: flex;
+    justify-content: flex-end;
+    &-item {
+      width: 40px;
+      max-width: 40px;
+      padding: 0 5px;
+     }
+  }
+}

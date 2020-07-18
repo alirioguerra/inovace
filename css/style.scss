@@ -1,0 +1,27 @@
+/*!
+Theme Name: Inovace Wordpress
+Theme URI: url do tema
+Author: Alírio Guerra
+Author URI: http://alirioguerra.com/
+Description: Production template for wordpress projects.
+Version: 1.0
+*/
+
+// Global & Grid
+
+@import "global/reset";
+@import "grid/grid";
+
+@import "global/variables-mixins";
+@import "global/global";
+@import "global/animation";
+
+// MODULES
+
+@import "modules/form";
+
+// PAGES
+
+@import "pages/index";
+@import "pages/header";
+@import "pages/footer";

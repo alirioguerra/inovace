@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# PERSON
+	Alírio Guerra
+	Front-end freelancer
+
+# TECHNOLOGY COLOPHON
+	HTML5, CSS3
+	Normalize.css, jQuery, Modernizr, Gulp, Sass, Local By Flywheel
+	IDE: VsCode, Photoshop, Illustrator

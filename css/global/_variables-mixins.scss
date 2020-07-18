@@ -1,0 +1,112 @@
+// Colors
+$primary: #5C58A6;
+$secondary: #ED1C64;
+$gray--light: #F7F8FC;
+$gray--dark: #525254;
+$white: #fff;
+$black: #10101b;
+
+// fonts
+@mixin typePrimary {
+	font-weight: 400;
+	font-family: 'Poppins', sans-serif;
+}
+
+@mixin typeSecondary {
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif;
+}
+
+@mixin type-1($size) {
+	@include typePrimary;
+	@if $size == 14 {
+		font-size: 0.875em;
+		line-height: 1.42857142857143em;
+	}
+	@if $size == 18 {
+		font-size: 1.125em;
+		line-height: 1.3888889em;
+	}
+	@if $size == 24 {
+		font-size: 1.5em;
+		line-height: 1.25em;
+	}
+	@if $size == 36 {
+		font-size: 2.25em;
+		line-height: 1.6666667em;
+	}
+	@if $size == 48 {
+		font-size: 3em;
+		line-height: 1em;
+	}
+	@if $size == 60 {
+		font-size: 3.75em;
+		line-height: 1em;
+	}
+}
+
+@mixin type-2($size) {
+	@include typeSecondary;
+	@if $size == 14 {
+		font-size: 0.875em;
+		line-height: 1.42857142857143em;
+	}
+	@if $size == 18 {
+		font-size: 1.125em;
+		line-height: 1.3888889em;
+	}
+	@if $size == 24 {
+		font-size: 1.6em;
+		line-height: 1.25em;
+	}
+	@if $size == 36 {
+		font-size: 2.25em;
+		line-height: 1.1666667em;
+	}
+	@if $size == 48 {
+		font-size: 3em;
+		line-height: 1.2em;
+	}
+	@if $size == 60 {
+		font-size: 3.75em;
+		line-height: 1em;
+	}
+}
+
+
+//shadows
+@mixin shadow ($level) {
+	
+	@if $level == 1 {
+		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	} @else if $level == 2 {
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	} @else if $level == 3 {
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	} @else if $level == 4 {
+		box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	} @else if $level == 5 {
+		box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+	}
+	
+}
+
+//breakpoints
+$breakpoints: (
+'small':  ( max-width:  767px ),
+'medium': ( max-width:  992px ),
+'large':  ( max-width: 1200px )
+) !default;
+
+@mixin bp($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media #{inspect(map-get($breakpoints, $breakpoint))} {
+			@content;
+		}
+	}
+	
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+		+ "Available breakpoints are: #{map-keys($breakpoints)}.";
+	}
+}
